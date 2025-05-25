@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route("/forecast", methods=["POST"])
+@app.route('/forecast', methods=['POST'])
 def forecast_threat():
     data = request.get_json()
     threat_type = data.get("threat_type")
@@ -16,7 +16,6 @@ def forecast_threat():
             "Monitor for infrastructure impact"
         ]
     }
+
     return jsonify(response)
 
-if __name__ == "__main__":
-    app.run(debug=True)
